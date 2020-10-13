@@ -1,2 +1,2 @@
 # COMS4103_Project
-# Status: Pending
+# Order 66 Clothing -> Inventory Management System
