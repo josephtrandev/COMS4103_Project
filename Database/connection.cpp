@@ -1,3 +1,10 @@
+//NOTE:
+//Must have appropriate drives in your complier settings
+//Must download "Connecter/C" From MySql website
+//connectionDB.h is hidden for security purpopese.
+//Make your own connectionDB.h that with three function that return you DB link, DB username, DB password.
+//Must complie this file with -lmysqlcppconn
+
 #include <iostream>
 #include <stdlib.h>
 
@@ -21,7 +28,7 @@ int main(){
         sql::Statement *stmt;
         sql::ResultSet *res;
         driver = get_driver_instance(); 
-        con = driver->connect("tcp://10.20.11.124:3306", connect.fetchuserName(), connect.fetchPassword());
+        con = driver->connect(connect.fetchUrl(), connect.fetchuserName(), connect.fetchPassword());
         con->setSchema("hoteldb");
         cout << "Connected!" << endl;
     }catch(exception e){
