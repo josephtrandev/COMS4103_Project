@@ -21,6 +21,19 @@ using namespace std;
 int main(){
     databaseConnection dbConnect;
     sql::Connection *con;
+    sql::ResultSet *res;
+    sql::Statement *stmt;
     con = dbConnect.dbConnection();
+    con->setSchema("order66db");
+
+    stmt = con->createStatement();
+    res = stmt->executeQuery("SELECT ProductID FROM Products");
+     while (res->next()) {
+        cout << "ProductID= " << res->getInt(1) << endl; // getInt(1)/getString() returns the first column
+    }
+
+    delete con;
+    delete res;
+    delete stmt;
     return 0;
 }

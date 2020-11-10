@@ -1,0 +1,13 @@
+CREATE TABLE Sales(
+	SaleID INT NOT NULL AUTO_INCREMENT,
+    ProductID INT NOT NULL,
+    OrderID INT NOT NULL,
+    SoldDate DATETIME,
+    QuantitySold INT,
+    ProductName CHAR(20),
+    ProductStyle CHAR(20),
+    ProductPrice DECIMAL(20,2),
+    PRIMARY KEY(SaleID),
+    CONSTRAINT FK_productSale FOREIGN KEY (ProductID) REFERENCES Products (ProductID) ON UPDATE CASCADE,
+    CONSTRAINT FK_OrderSale FOREIGN KEY (OrderID) REFERENCES Orders (OrderID) ON UPDATE CASCADE
+)AUTO_INCREMENT=89352;
