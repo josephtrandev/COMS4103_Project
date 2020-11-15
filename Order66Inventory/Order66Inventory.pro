@@ -9,15 +9,27 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    itemlookup.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    recentorders.cpp \
+    saletrends.cpp \
+    viewinventory.cpp
 
 HEADERS += \
     dbConnection.h \
-    mainwindow.h
+    itemlookup.h \
+    mainwindow.h \
+    recentorders.h \
+    saletrends.h \
+    viewinventory.h
 
 FORMS += \
-    mainwindow.ui
+    itemlookup.ui \
+    mainwindow.ui \
+    recentorders.ui \
+    saletrends.ui \
+    viewinventory.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
