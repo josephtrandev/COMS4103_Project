@@ -1,1 +1,0 @@
-order66dbinstance.cijwoecmkkza.us-east.rds.amazonaws.com appclient order66db DevApp1234!

@@ -5,6 +5,7 @@
 #include <itemlookup.h>
 #include <saletrends.h>
 #include <recentorders.h>
+#include "dbConnection.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -32,5 +33,6 @@ private:
     ItemLookUp _iLookUp;
     saleTrends _sTrend;
     recentOrders _rOrders;
+    dbConnection conn;
 };
 #endif // MAINWINDOW_H

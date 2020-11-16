@@ -25,7 +25,7 @@
         <widget class="QWidget" name="page">
          <layout class="QGridLayout" name="gridLayout_3">
           <item row="1" column="0">
-           <widget class="QTableView" name="tableView"/>
+           <widget class="QTableView" name="inventoryTable"/>
           </item>
           <item row="0" column="0">
            <widget class="QLabel" name="label">
