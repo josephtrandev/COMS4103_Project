@@ -69,7 +69,7 @@
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>Enter Item Id</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -98,11 +98,11 @@
             </property>
            </widget>
           </item>
+          <item>
+           <widget class="QTableView" name="itemLookUpTbl"/>
+          </item>
          </layout>
         </widget>
-       </item>
-       <item>
-        <widget class="QTableWidget" name="tableWidget"/>
        </item>
       </layout>
      </widget>

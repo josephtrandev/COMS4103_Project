@@ -24,6 +24,9 @@ MainWindow::~MainWindow()
 void MainWindow::on_invenBtn_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
+    if(!conn.db.isOpen()){
+        conn.dbConnectionOpen();
+    }
     QSqlQueryModel * model = new QSqlQueryModel;
     QSqlQuery* qry = new QSqlQuery(conn.db);
 
