@@ -13,13 +13,29 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <widget class="QStackedWidget" name="stackedWidget">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="currentIndex">
       <number>0</number>
      </property>
      <widget class="QWidget" name="page">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QWidget {
+	border: 2 solid rgba(202, 210, 197);
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(107, 144, 128), stop:1 rgba(204, 227, 222));
+	color: 2f3e46;
+}</string>
+      </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
         <widget class="QGroupBox" name="groupBox">
@@ -35,9 +51,21 @@
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item alignment="Qt::AlignHCenter|Qt::AlignTop">
            <widget class="QLabel" name="label">
+            <property name="font">
+             <font>
+              <family>Open Sans</family>
+              <pointsize>-1</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font-size: 20px;
-</string>
+             <string notr="true">QLabel {
+	font-size: 20px;
+	border: none;
+	background-color: none;
+	color: rgb(54, 73, 88);
+}</string>
             </property>
             <property name="text">
              <string>Item Look Up</string>
@@ -46,6 +74,20 @@
           </item>
           <item alignment="Qt::AlignHCenter">
            <widget class="QLabel" name="label_2">
+            <property name="font">
+             <font>
+              <family>Open Sans</family>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel {
+	border: none;
+	background-color: none;
+	color: rgb(54, 73, 88);
+}</string>
+            </property>
             <property name="text">
              <string>Enter Item ID:</string>
             </property>
@@ -66,7 +108,10 @@
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">QLineEdit {
+	border: 2 solid black;
+	background-color: white;
+}</string>
             </property>
             <property name="text">
              <string/>
@@ -93,6 +138,14 @@
               <height>40</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Open Sans</family>
+              <pointsize>-1</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton{
 	font-size: 20px;
@@ -114,7 +167,14 @@ QPushButton:Hover{
            </widget>
           </item>
           <item>
-           <widget class="QTableView" name="itemLookUpTbl"/>
+           <widget class="QTableView" name="itemLookUpTbl">
+            <property name="styleSheet">
+             <string notr="true">QTableView {
+	border: 2 solid black;
+	background-color: white;
+}</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>
