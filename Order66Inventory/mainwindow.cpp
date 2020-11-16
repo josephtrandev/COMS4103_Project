@@ -35,6 +35,7 @@ void MainWindow::on_invenBtn_clicked()
     ui->inventoryTable->setModel(model);
     ui->inventoryTable->setAlternatingRowColors(true);
     ui->inventoryTable->setStyleSheet("alternate-background-color: #84A98C");
+    ui->inventoryTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }
 
 void MainWindow::on_itemBtn_clicked()

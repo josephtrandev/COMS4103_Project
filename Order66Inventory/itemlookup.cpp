@@ -32,6 +32,7 @@ void ItemLookUp::on_lookUpBtn_clicked()
     ui->itemLookUpTbl->setModel(model);
     ui->itemLookUpTbl->setAlternatingRowColors(true);
     ui->itemLookUpTbl->setStyleSheet("alternate-background-color: #84A98C");
+    ui->itemLookUpTbl->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     if(model->rowCount() == 0){
         qDebug() << "No value Found!" << Qt::endl;
     }
