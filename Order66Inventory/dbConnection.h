@@ -12,7 +12,7 @@
 class dbConnection{
     public:
         dbConnection();
-        ~dbConnection();
+       // ~dbConnection();
         bool dbConnectionOpen();
         QSqlDatabase db;
 

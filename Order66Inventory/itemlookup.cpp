@@ -9,7 +9,6 @@ ItemLookUp::ItemLookUp(QWidget *parent) :
     ui(new Ui::ItemLookUp)
 {
     ui->setupUi(this);
-    conn.dbConnectionOpen();
 }
 
 ItemLookUp::~ItemLookUp()
@@ -31,8 +30,10 @@ void ItemLookUp::on_lookUpBtn_clicked()
     qry->exec();
     model->setQuery(*qry);
     ui->itemLookUpTbl->setModel(model);
+    ui->itemLookUpTbl->setAlternatingRowColors(true);
+    ui->itemLookUpTbl->setStyleSheet("alternate-background-color: #84A98C");
     if(model->rowCount() == 0){
-        qDebug() << "No value Found!" << endl;
+        qDebug() << "No value Found!" << Qt::endl;
     }
    // qDebug() <<
 }

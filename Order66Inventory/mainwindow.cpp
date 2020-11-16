@@ -13,7 +13,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->stackedWidget->insertWidget(1, &_iLookUp);
     ui->stackedWidget->insertWidget(2, &_rOrders);
     ui->stackedWidget->insertWidget(3, &_sTrend);
-    conn.dbConnectionOpen();
 }
 
 MainWindow::~MainWindow()
@@ -23,10 +22,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_invenBtn_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(0);
     if(!conn.db.isOpen()){
         conn.dbConnectionOpen();
     }
+    ui->stackedWidget->setCurrentIndex(0);
     QSqlQueryModel * model = new QSqlQueryModel;
     QSqlQuery* qry = new QSqlQuery(conn.db);
 
@@ -34,7 +33,8 @@ void MainWindow::on_invenBtn_clicked()
     qry->exec();
     model->setQuery(*qry);
     ui->inventoryTable->setModel(model);
-  //  conn.dbConnectionClose();
+    ui->inventoryTable->setAlternatingRowColors(true);
+    ui->inventoryTable->setStyleSheet("alternate-background-color: #84A98C");
 }
 
 void MainWindow::on_itemBtn_clicked()
