@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <itemlookup.h>
+#include <saletrends.h>
+#include <recentorders.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,7 +18,19 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_invenBtn_clicked();
+
+    void on_itemBtn_clicked();
+
+    void on_recentBtn_clicked();
+
+    void on_trendBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
+    ItemLookUp _iLookUp;
+    saleTrends _sTrend;
+    recentOrders _rOrders;
 };
 #endif // MAINWINDOW_H
