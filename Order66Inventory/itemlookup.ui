@@ -46,7 +46,7 @@
           </sizepolicy>
          </property>
          <property name="title">
-          <string>GroupBox</string>
+          <string>Item Look Up</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item alignment="Qt::AlignHCenter|Qt::AlignTop">
@@ -158,7 +158,8 @@
 QPushButton:Hover{
 	background: #52796f;
 	font-size: 24px;
-	color: #f8f8ff
+	color: #f8f8ff;
+	border: 2px solid white;
 }</string>
             </property>
             <property name="text">
