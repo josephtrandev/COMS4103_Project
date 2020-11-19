@@ -16,7 +16,6 @@
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true">QWidget {
-	border: 2 solid rgb(202, 210, 197);
 	background-color: white;
 	color: 2f3e46;
 }</string>
@@ -35,7 +34,11 @@
         <widget class="QWidget" name="page">
          <layout class="QGridLayout" name="gridLayout_3">
           <item row="1" column="0">
-           <widget class="QTableView" name="inventoryTable"/>
+           <widget class="QTableView" name="inventoryTable">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+           </widget>
           </item>
           <item row="0" column="0">
            <widget class="QLabel" name="label">
@@ -105,10 +108,13 @@
           <bold>true</bold>
          </font>
         </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
          <string notr="true">QPushButton{
 	font-size: 20px;
-	color: #84A98C;
+	color: rgb(66, 85, 70);
 	font-weight: bold;
 	background: #f8f8ff;
 	border: 2px solid #52796f;
@@ -156,10 +162,13 @@ QPushButton:Hover{
           <bold>true</bold>
          </font>
         </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
          <string notr="true">QPushButton{
 	font-size: 20px;
-	color: #84A98C;
+	color: rgb(66, 85, 70);
 	font-weight: bold;
 	background: #f8f8ff;
 	border: 2px solid #52796f;
@@ -205,10 +214,13 @@ QPushButton:Hover{
           <bold>true</bold>
          </font>
         </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
          <string notr="true">QPushButton{
 	font-size: 20px;
-	color: #84A98C;
+	color: rgb(66, 85, 70);
 	font-weight: bold;
 	background: #f8f8ff;
 	border: 2px solid #52796f;
@@ -254,10 +266,13 @@ QPushButton:Hover{
           <bold>true</bold>
          </font>
         </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
          <string notr="true">QPushButton{
 	font-size: 20px;
-	color: #84A98C;
+	color: rgb(66, 85, 70);
 	font-weight: bold;
 	background: #f8f8ff;
 	border: 2px solid #52796f;
