@@ -16,8 +16,8 @@
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true">QWidget {
-	border: 2 solid rgba(202, 210, 197);
-	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(107, 144, 128), stop:1 rgba(204, 227, 222));
+	border: 2 solid rgb(202, 210, 197);
+	background-color: white;
 	color: 2f3e46;
 }</string>
    </property>
@@ -26,6 +26,9 @@
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
        <widget class="QStackedWidget" name="stackedWidget">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
         <property name="currentIndex">
          <number>0</number>
         </property>
