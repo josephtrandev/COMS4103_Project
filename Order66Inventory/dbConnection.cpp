@@ -16,15 +16,10 @@ dbConnection::dbConnection(){
     }
 }
 
-/*dbConnection::~dbConnection(){
-    QString connection;
-    connection=db.connectionName();
-    db.close();
-    db=QSqlDatabase();
-    db.removeDatabase(connection);
-    //db.removeDatabase(QSqlDatabase::defaultConnection);
-    qDebug()<<("Disconnected.....");
-}*/
+dbConnection::~dbConnection(){
+    this->db = QSqlDatabase();
+    QSqlDatabase::removeDatabase(this->dbName);
+}
 
 bool dbConnection::dbConnectionOpen(){
     getConnInfo();
@@ -44,7 +39,7 @@ bool dbConnection::dbConnectionOpen(){
 }
 
 void dbConnection::getConnInfo(){
-    QFile inputfile("C:\\Users\\Vatsal\\Desktop\\info.txt");
+    QFile inputfile("..//Order66Inventory//info.txt");
     inputfile.open(QIODevice::ReadOnly);
     QTextStream textStream(&inputfile);
     if(inputfile.isOpen()){

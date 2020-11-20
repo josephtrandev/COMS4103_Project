@@ -36,5 +36,5 @@ void ItemLookUp::on_lookUpBtn_clicked()
     if(model->rowCount() == 0){
         qDebug() << "No value Found!" << Qt::endl;
     }
-   // qDebug() <<
+    ui->getItemText->clear();
 }
