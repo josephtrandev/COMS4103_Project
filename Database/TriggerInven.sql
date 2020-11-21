@@ -3,7 +3,6 @@ CREATE TRIGGER occupy_trig
 AFTER INSERT ON Inventory_Supplier FOR EACH ROW
 begin
        DECLARE id_exists Boolean;
-       -- Check BookingRequest table
        SELECT 1
        INTO @id_exists
        FROM Inventory
