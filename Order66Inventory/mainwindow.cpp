@@ -4,6 +4,7 @@
 #include <QSqlQuery>
 #include <QSqlQueryModel>
 #include <QSqlTableModel>
+#include <saletrends.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -46,9 +47,11 @@ void MainWindow::on_itemBtn_clicked()
 void MainWindow::on_recentBtn_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
+    _rOrders.popOrderTable();
 }
 
 void MainWindow::on_trendBtn_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
+    _sTrend.popSaleTable();
 }

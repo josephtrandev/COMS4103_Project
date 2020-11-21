@@ -29,7 +29,7 @@ public:
     QWidget *page;
     QVBoxLayout *verticalLayout;
     QLabel *label;
-    QTableView *tableView;
+    QTableView *orderTable;
 
     void setupUi(QWidget *recentOrders)
     {
@@ -51,10 +51,10 @@ public:
 
         verticalLayout->addWidget(label);
 
-        tableView = new QTableView(page);
-        tableView->setObjectName(QString::fromUtf8("tableView"));
+        orderTable = new QTableView(page);
+        orderTable->setObjectName(QString::fromUtf8("orderTable"));
 
-        verticalLayout->addWidget(tableView);
+        verticalLayout->addWidget(orderTable);
 
         stackedWidget->addWidget(page);
 

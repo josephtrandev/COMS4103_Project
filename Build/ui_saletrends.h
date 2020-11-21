@@ -28,7 +28,7 @@ public:
     QWidget *page;
     QGridLayout *gridLayout_2;
     QLabel *label;
-    QTableView *tableView;
+    QTableView *saleTrendTb;
 
     void setupUi(QWidget *saleTrends)
     {
@@ -49,10 +49,10 @@ public:
 
         gridLayout_2->addWidget(label, 0, 0, 1, 1, Qt::AlignHCenter);
 
-        tableView = new QTableView(page);
-        tableView->setObjectName(QString::fromUtf8("tableView"));
+        saleTrendTb = new QTableView(page);
+        saleTrendTb->setObjectName(QString::fromUtf8("saleTrendTb"));
 
-        gridLayout_2->addWidget(tableView, 1, 0, 1, 1);
+        gridLayout_2->addWidget(saleTrendTb, 1, 0, 1, 1);
 
         stackedWidget->addWidget(page);
 
