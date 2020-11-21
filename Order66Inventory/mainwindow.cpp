@@ -55,3 +55,18 @@ void MainWindow::on_trendBtn_clicked()
     ui->stackedWidget->setCurrentIndex(3);
     _sTrend.popSaleTable();
 }
+
+void MainWindow::on_pushButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_inventoryTable_clicked(const QModelIndex &index)
+{
+    ui->stackedWidget->setCurrentIndex(4);
+    QString val = ui->inventoryTable->model()->data(index).toString();
+    qDebug()<<" 1";
+    qDebug() <<val;
+
+}
+

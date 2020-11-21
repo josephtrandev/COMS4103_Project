@@ -10,6 +10,7 @@ recentOrders::recentOrders(QWidget *parent) :
     ui(new Ui::recentOrders)
 {
     ui->setupUi(this);
+
 }
 
 recentOrders::~recentOrders()
@@ -32,4 +33,14 @@ void recentOrders::popOrderTable(){
     ui->orderTable->setAlternatingRowColors(true);
     ui->orderTable->setStyleSheet("alternate-background-color: #84A98C");
     ui->orderTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+}
+
+void recentOrders::on_orderTable_clicked(const QModelIndex &index)
+{
+    ui->rsStackWidget->setCurrentIndex(1);
+}
+
+void recentOrders::on_pushButton_clicked()
+{
+    ui->rsStackWidget->setCurrentIndex(0);
 }

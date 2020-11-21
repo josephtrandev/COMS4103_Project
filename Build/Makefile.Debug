@@ -485,6 +485,17 @@ debug/moc_recentorders.cpp: ../Order66Inventory/recentorders.h \
 		C:/Qt/5.15.1/mingw81_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.15.1/mingw81_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.15.1/mingw81_32/include/QtGui/qtouchdevice.h \
+		../Order66Inventory/dbConnection.h \
+		C:/Qt/5.15.1/mingw81_32/include/QtSql/QSql \
+		C:/Qt/5.15.1/mingw81_32/include/QtSql/qtsqlglobal.h \
+		C:/Qt/5.15.1/mingw81_32/include/QtSql/qtsql-config.h \
+		C:/Qt/5.15.1/mingw81_32/include/QtSql/QSqlDatabase \
+		C:/Qt/5.15.1/mingw81_32/include/QtSql/qsqldatabase.h \
+		C:/Qt/5.15.1/mingw81_32/include/QtCore/QDebug \
+		C:/Qt/5.15.1/mingw81_32/include/QtSql/QSqlError \
+		C:/Qt/5.15.1/mingw81_32/include/QtSql/qsqlerror.h \
+		C:/Qt/5.15.1/mingw81_32/include/QtCore/QFile \
+		C:/Qt/5.15.1/mingw81_32/include/QtCore/QTextStream \
 		debug/moc_predefs.h \
 		C:/Qt/5.15.1/mingw81_32/bin/moc.exe
 	C:\Qt\5.15.1\mingw81_32\bin\moc.exe $(DEFINES) --include C:/Users/Vatsal/Desktop/COMS4103_Project/Build/debug/moc_predefs.h -IC:/Qt/5.15.1/mingw81_32/mkspecs/win32-g++ -IC:/Users/Vatsal/Desktop/COMS4103_Project/Order66Inventory -IC:/Qt/5.15.1/mingw81_32/include -IC:/Qt/5.15.1/mingw81_32/include/QtWidgets -IC:/Qt/5.15.1/mingw81_32/include/QtGui -IC:/Qt/5.15.1/mingw81_32/include/QtANGLE -IC:/Qt/5.15.1/mingw81_32/include/QtSql -IC:/Qt/5.15.1/mingw81_32/include/QtCore -I. -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_32/i686-w64-mingw32/include ..\Order66Inventory\recentorders.h -o debug\moc_recentorders.cpp
@@ -1419,6 +1430,17 @@ debug/recentorders.o: ../Order66Inventory/recentorders.cpp ../Order66Inventory/r
 		C:/Qt/5.15.1/mingw81_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.15.1/mingw81_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.15.1/mingw81_32/include/QtGui/qtouchdevice.h \
+		../Order66Inventory/dbConnection.h \
+		C:/Qt/5.15.1/mingw81_32/include/QtSql/QSql \
+		C:/Qt/5.15.1/mingw81_32/include/QtSql/qtsqlglobal.h \
+		C:/Qt/5.15.1/mingw81_32/include/QtSql/qtsql-config.h \
+		C:/Qt/5.15.1/mingw81_32/include/QtSql/QSqlDatabase \
+		C:/Qt/5.15.1/mingw81_32/include/QtSql/qsqldatabase.h \
+		C:/Qt/5.15.1/mingw81_32/include/QtCore/QDebug \
+		C:/Qt/5.15.1/mingw81_32/include/QtSql/QSqlError \
+		C:/Qt/5.15.1/mingw81_32/include/QtSql/qsqlerror.h \
+		C:/Qt/5.15.1/mingw81_32/include/QtCore/QFile \
+		C:/Qt/5.15.1/mingw81_32/include/QtCore/QTextStream \
 		ui_recentorders.h \
 		C:/Qt/5.15.1/mingw81_32/include/QtCore/QVariant \
 		C:/Qt/5.15.1/mingw81_32/include/QtWidgets/QApplication \
@@ -1458,7 +1480,13 @@ debug/recentorders.o: ../Order66Inventory/recentorders.cpp ../Order66Inventory/r
 		C:/Qt/5.15.1/mingw81_32/include/QtWidgets/qstackedwidget.h \
 		C:/Qt/5.15.1/mingw81_32/include/QtWidgets/QTableView \
 		C:/Qt/5.15.1/mingw81_32/include/QtWidgets/qtableview.h \
-		C:/Qt/5.15.1/mingw81_32/include/QtWidgets/QVBoxLayout
+		C:/Qt/5.15.1/mingw81_32/include/QtWidgets/QVBoxLayout \
+		C:/Qt/5.15.1/mingw81_32/include/QtSql/QSqlQuery \
+		C:/Qt/5.15.1/mingw81_32/include/QtSql/qsqlquery.h \
+		C:/Qt/5.15.1/mingw81_32/include/QtSql/QSqlQueryModel \
+		C:/Qt/5.15.1/mingw81_32/include/QtSql/qsqlquerymodel.h \
+		C:/Qt/5.15.1/mingw81_32/include/QtSql/QSqlTableModel \
+		C:/Qt/5.15.1/mingw81_32/include/QtSql/qsqltablemodel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\recentorders.o ..\Order66Inventory\recentorders.cpp
 
 debug/saletrends.o: ../Order66Inventory/saletrends.cpp ../Order66Inventory/saletrends.h \

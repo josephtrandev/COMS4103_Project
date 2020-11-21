@@ -14,6 +14,7 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTableView>
 #include <QtWidgets/QVBoxLayout>
@@ -25,11 +26,15 @@ class Ui_recentOrders
 {
 public:
     QGridLayout *gridLayout;
-    QStackedWidget *stackedWidget;
+    QStackedWidget *rsStackWidget;
     QWidget *page;
     QVBoxLayout *verticalLayout;
     QLabel *label;
     QTableView *orderTable;
+    QWidget *page_2;
+    QGridLayout *gridLayout_2;
+    QLabel *label_2;
+    QPushButton *pushButton;
 
     void setupUi(QWidget *recentOrders)
     {
@@ -38,8 +43,8 @@ public:
         recentOrders->resize(400, 300);
         gridLayout = new QGridLayout(recentOrders);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        stackedWidget = new QStackedWidget(recentOrders);
-        stackedWidget->setObjectName(QString::fromUtf8("stackedWidget"));
+        rsStackWidget = new QStackedWidget(recentOrders);
+        rsStackWidget->setObjectName(QString::fromUtf8("rsStackWidget"));
         page = new QWidget();
         page->setObjectName(QString::fromUtf8("page"));
         verticalLayout = new QVBoxLayout(page);
@@ -53,17 +58,33 @@ public:
 
         orderTable = new QTableView(page);
         orderTable->setObjectName(QString::fromUtf8("orderTable"));
+        orderTable->viewport()->setProperty("cursor", QVariant(QCursor(Qt::PointingHandCursor)));
 
         verticalLayout->addWidget(orderTable);
 
-        stackedWidget->addWidget(page);
+        rsStackWidget->addWidget(page);
+        page_2 = new QWidget();
+        page_2->setObjectName(QString::fromUtf8("page_2"));
+        gridLayout_2 = new QGridLayout(page_2);
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        label_2 = new QLabel(page_2);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
 
-        gridLayout->addWidget(stackedWidget, 0, 0, 1, 1);
+        gridLayout_2->addWidget(label_2, 0, 0, 1, 1);
+
+        pushButton = new QPushButton(page_2);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        gridLayout_2->addWidget(pushButton, 1, 0, 1, 1);
+
+        rsStackWidget->addWidget(page_2);
+
+        gridLayout->addWidget(rsStackWidget, 0, 0, 1, 1);
 
 
         retranslateUi(recentOrders);
 
-        stackedWidget->setCurrentIndex(0);
+        rsStackWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(recentOrders);
@@ -73,6 +94,8 @@ public:
     {
         recentOrders->setWindowTitle(QCoreApplication::translate("recentOrders", "Form", nullptr));
         label->setText(QCoreApplication::translate("recentOrders", "Recent Orders", nullptr));
+        label_2->setText(QCoreApplication::translate("recentOrders", "Recent Order Details", nullptr));
+        pushButton->setText(QCoreApplication::translate("recentOrders", "PushButton", nullptr));
     } // retranslateUi
 
 };

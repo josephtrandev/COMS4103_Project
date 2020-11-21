@@ -28,6 +28,10 @@ private slots:
 
     void on_trendBtn_clicked();
 
+    void on_pushButton_clicked();
+
+    void on_inventoryTable_clicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
     ItemLookUp _iLookUp;

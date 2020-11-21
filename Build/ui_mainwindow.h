@@ -36,6 +36,10 @@ public:
     QGridLayout *gridLayout_3;
     QTableView *inventoryTable;
     QLabel *label;
+    QWidget *page_2;
+    QGridLayout *gridLayout_4;
+    QLabel *label_2;
+    QPushButton *pushButton;
     QVBoxLayout *verticalLayout;
     QPushButton *invenBtn;
     QPushButton *itemBtn;
@@ -104,6 +108,21 @@ public:
         gridLayout_3->addWidget(label, 0, 0, 1, 1);
 
         stackedWidget->addWidget(page);
+        page_2 = new QWidget();
+        page_2->setObjectName(QString::fromUtf8("page_2"));
+        gridLayout_4 = new QGridLayout(page_2);
+        gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
+        label_2 = new QLabel(page_2);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+
+        gridLayout_4->addWidget(label_2, 0, 0, 1, 1);
+
+        pushButton = new QPushButton(page_2);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        gridLayout_4->addWidget(pushButton, 1, 0, 1, 1);
+
+        stackedWidget->addWidget(page_2);
 
         gridLayout->addWidget(stackedWidget, 0, 0, 1, 1);
 
@@ -242,6 +261,8 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Inventory Table", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "Inventory Detals", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         invenBtn->setText(QCoreApplication::translate("MainWindow", "Inventory", nullptr));
         itemBtn->setText(QCoreApplication::translate("MainWindow", "Item Look Up", nullptr));
         recentBtn->setText(QCoreApplication::translate("MainWindow", "Recent Orders", nullptr));
