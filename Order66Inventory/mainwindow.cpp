@@ -94,6 +94,9 @@ void MainWindow::on_inventoryTable_clicked(const QModelIndex &index)
     if(stockQry->exec()){
         while(stockQry->next()){
             ui->supplierBox->setText(stockQry->value(0).toString());
+            ui->qOrderBox->setText(stockQry->value(1).toString());
+            ui->orderDateBox->setText(stockQry->value(2).toString());
+            ui->orderReceiveBox->setText(stockQry->value(3).toString());
         }
     }
 }

@@ -293,7 +293,7 @@ public:
 
         retranslateUi(recentOrders);
 
-        rsStackWidget->setCurrentIndex(1);
+        rsStackWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(recentOrders);

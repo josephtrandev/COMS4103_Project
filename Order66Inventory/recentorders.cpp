@@ -52,7 +52,7 @@ void recentOrders::on_orderTable_clicked(const QModelIndex &index)
             ui->orderIDBox->setText(invoiceQry->value(1).toString());
             ui->invoiceDateBox->setText(invoiceQry->value(2).toString());
             ui->invoiceStatusBox->setText(invoiceQry->value(3).toString());
-            ui->sPriceBox->setText(invoiceQry->value(4).toString());
+            ui->sPriceBox->setText("$" + invoiceQry->value(4).toString());
             ui->quantityBox->setText(invoiceQry->value(5).toString());
             ui->totalBox->setText("$" + invoiceQry->value(8).toString());
         }
