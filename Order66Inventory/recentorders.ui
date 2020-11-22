@@ -33,7 +33,7 @@
           <string notr="true">font-size: 22pt;
 color: rgb(54, 73, 88);
 font-weight: bold;
-border-bottom: 2px solid;</string>
+border-bottom: 2px solid rgb(54, 73, 88);</string>
          </property>
          <property name="text">
           <string>Recent Orders</string>
@@ -50,7 +50,7 @@ border-bottom: 2px solid;</string>
          </property>
          <property name="styleSheet">
           <string notr="true">QTableView {
-	border: 2px solid black;
+	border: 2px solid rgb(54, 73, 88);
 	background-color: #F8F8FF;
 }
 
@@ -79,7 +79,7 @@ QHeaderView{
           <string notr="true">font-size: 22pt;
 color: rgb(54, 73, 88);
 font-weight: bold;
-border-bottom: 2px solid;</string>
+border-bottom: 2px solid rgb(54, 73, 88);</string>
          </property>
          <property name="text">
           <string>Recent Order Details</string>

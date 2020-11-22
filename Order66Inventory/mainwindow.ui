@@ -97,7 +97,7 @@
             </property>
             <property name="styleSheet">
              <string notr="true">font-size: 22pt;
-border-bottom: 2px solid;
+border-bottom: 2px solid rgb(54, 73, 88);
 padding-bottom: 5px;
 color: rgb(54, 73, 88);</string>
             </property>
@@ -156,8 +156,9 @@ QPushButton:Hover{
             <property name="styleSheet">
              <string notr="true">font-size: 22pt;
 font-weight:bold;
-border-bottom: 2px solid;
-padding-bottom: 5px;</string>
+border-bottom: 2px solid rgb(54, 73, 88);
+padding-bottom: 5px;
+color: rgb(54, 73, 88);</string>
             </property>
             <property name="text">
              <string>Inventory Details</string>
