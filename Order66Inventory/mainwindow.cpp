@@ -63,10 +63,27 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_inventoryTable_clicked(const QModelIndex &index)
 {
+    if(!conn.db.isOpen()){
+        conn.dbConnectionOpen();
+    }
     ui->stackedWidget->setCurrentIndex(4);
     QString val = ui->inventoryTable->model()->data(index).toString();
     qDebug()<<" 1";
     qDebug() <<val;
+    if(!conn.db.isOpen()){
 
+    }
+   QSqlQuery* qry = new QSqlQuery(conn.db);
+    qry->prepare("SELECT * FROM Inventory WHERE ProductID = '"+val+"'");
+    if(qry->exec()){
+        while(qry->next()){
+            ui->InvenIDBox->setText(qry->value(0).toString());
+            ui->productIdBox->setText(qry->value(1).toString());
+            ui->quantityBox->setText(qry->value(2).toString());
+            ui->updateDateBox->setText(qry->value(3).toString());
+            ui->LocBox->setText(qry->value(4).toString());
+            ui->StockIdBox->setText(qry->value(5).toString());
+        }
+    }
 }
 

@@ -11,9 +11,12 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -38,8 +41,22 @@ public:
     QLabel *label;
     QWidget *page_2;
     QGridLayout *gridLayout_4;
-    QLabel *label_2;
     QPushButton *pushButton;
+    QLabel *label_2;
+    QGroupBox *groupBox;
+    QFormLayout *formLayout;
+    QLabel *label_4;
+    QLineEdit *productIdBox;
+    QLabel *label_6;
+    QLineEdit *InvenIDBox;
+    QLabel *label_3;
+    QLineEdit *quantityBox;
+    QLabel *label_5;
+    QLineEdit *updateDateBox;
+    QLabel *label_7;
+    QLabel *label_8;
+    QLineEdit *LocBox;
+    QLineEdit *StockIdBox;
     QVBoxLayout *verticalLayout;
     QPushButton *invenBtn;
     QPushButton *itemBtn;
@@ -59,6 +76,7 @@ public:
         sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
         MainWindow->setSizePolicy(sizePolicy);
         MainWindow->setMinimumSize(QSize(1000, 0));
+        MainWindow->setStyleSheet(QString::fromUtf8("background-color: #F8F8FF;"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         centralwidget->setStyleSheet(QString::fromUtf8("QWidget {\n"
@@ -71,13 +89,14 @@ public:
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName(QString::fromUtf8("stackedWidget"));
-        stackedWidget->setStyleSheet(QString::fromUtf8(""));
+        stackedWidget->setStyleSheet(QString::fromUtf8("background-color: #F8F8FF;"));
         page = new QWidget();
         page->setObjectName(QString::fromUtf8("page"));
         gridLayout_3 = new QGridLayout(page);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         inventoryTable = new QTableView(page);
         inventoryTable->setObjectName(QString::fromUtf8("inventoryTable"));
+        inventoryTable->viewport()->setProperty("cursor", QVariant(QCursor(Qt::PointingHandCursor)));
         inventoryTable->setStyleSheet(QString::fromUtf8("QHeaderView{\n"
 "	font-size: 14px;\n"
 "	font-weight: bold;\n"
@@ -91,6 +110,7 @@ public:
 
         label = new QLabel(page);
         label->setObjectName(QString::fromUtf8("label"));
+        label->setMaximumSize(QSize(16777215, 16777215));
         QFont font;
         font.setFamily(QString::fromUtf8("Open Sans"));
         font.setBold(true);
@@ -110,17 +130,136 @@ public:
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName(QString::fromUtf8("page_2"));
+        page_2->setStyleSheet(QString::fromUtf8("background-color: #F8F8FF"));
         gridLayout_4 = new QGridLayout(page_2);
         gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
+        pushButton = new QPushButton(page_2);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setMinimumSize(QSize(0, 45));
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	font-size: 20px;\n"
+"	color: rgb(66, 85, 70);\n"
+"	font-weight: bold;\n"
+"	background: #f8f8ff;\n"
+"	border: 2px solid #52796f;\n"
+"}\n"
+"\n"
+"QPushButton:Hover{\n"
+"	background: #52796f;\n"
+"	font-size: 24px;\n"
+"	color: #f8f8ff;\n"
+"	border: 2px solid white;\n"
+"}"));
+
+        gridLayout_4->addWidget(pushButton, 3, 0, 1, 1);
+
         label_2 = new QLabel(page_2);
         label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setMaximumSize(QSize(16777215, 50));
+        label_2->setStyleSheet(QString::fromUtf8("font-size:20px;\n"
+""));
+        label_2->setAlignment(Qt::AlignCenter);
 
         gridLayout_4->addWidget(label_2, 0, 0, 1, 1);
 
-        pushButton = new QPushButton(page_2);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        groupBox = new QGroupBox(page_2);
+        groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        groupBox->setStyleSheet(QString::fromUtf8("QGroupBox{\n"
+"border: none;\n"
+"}\n"
+"\n"
+"QLineEdit{\n"
+"	font-size: 18px;\n"
+"	padding: 5px;\n"
+"}"));
+        formLayout = new QFormLayout(groupBox);
+        formLayout->setObjectName(QString::fromUtf8("formLayout"));
+        label_4 = new QLabel(groupBox);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setStyleSheet(QString::fromUtf8("font-size: 18px;\n"
+"\n"
+"padding: 5px;"));
 
-        gridLayout_4->addWidget(pushButton, 1, 0, 1, 1);
+        formLayout->setWidget(0, QFormLayout::LabelRole, label_4);
+
+        productIdBox = new QLineEdit(groupBox);
+        productIdBox->setObjectName(QString::fromUtf8("productIdBox"));
+        productIdBox->setStyleSheet(QString::fromUtf8("font-size: 18px;\n"
+"padding: 5px;"));
+        productIdBox->setReadOnly(true);
+
+        formLayout->setWidget(0, QFormLayout::FieldRole, productIdBox);
+
+        label_6 = new QLabel(groupBox);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setStyleSheet(QString::fromUtf8("font-size: 18px;\n"
+"padding:5px;"));
+
+        formLayout->setWidget(1, QFormLayout::LabelRole, label_6);
+
+        InvenIDBox = new QLineEdit(groupBox);
+        InvenIDBox->setObjectName(QString::fromUtf8("InvenIDBox"));
+        InvenIDBox->setStyleSheet(QString::fromUtf8(""));
+        InvenIDBox->setReadOnly(true);
+
+        formLayout->setWidget(1, QFormLayout::FieldRole, InvenIDBox);
+
+        label_3 = new QLabel(groupBox);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setStyleSheet(QString::fromUtf8("font-size: 18px;\n"
+"padding: 5px;"));
+
+        formLayout->setWidget(2, QFormLayout::LabelRole, label_3);
+
+        quantityBox = new QLineEdit(groupBox);
+        quantityBox->setObjectName(QString::fromUtf8("quantityBox"));
+        quantityBox->setMaximumSize(QSize(125, 16777215));
+        quantityBox->setStyleSheet(QString::fromUtf8(""));
+        quantityBox->setReadOnly(true);
+
+        formLayout->setWidget(2, QFormLayout::FieldRole, quantityBox);
+
+        label_5 = new QLabel(groupBox);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setStyleSheet(QString::fromUtf8("font-size: 18px;\n"
+"padding: 5px;"));
+
+        formLayout->setWidget(3, QFormLayout::LabelRole, label_5);
+
+        updateDateBox = new QLineEdit(groupBox);
+        updateDateBox->setObjectName(QString::fromUtf8("updateDateBox"));
+        updateDateBox->setReadOnly(true);
+
+        formLayout->setWidget(3, QFormLayout::FieldRole, updateDateBox);
+
+        label_7 = new QLabel(groupBox);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setStyleSheet(QString::fromUtf8("font-size: 18px;\n"
+"padding: 5px;"));
+
+        formLayout->setWidget(4, QFormLayout::LabelRole, label_7);
+
+        label_8 = new QLabel(groupBox);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_8->setStyleSheet(QString::fromUtf8("font-size: 18px;\n"
+"padding: 5px;"));
+
+        formLayout->setWidget(5, QFormLayout::LabelRole, label_8);
+
+        LocBox = new QLineEdit(groupBox);
+        LocBox->setObjectName(QString::fromUtf8("LocBox"));
+        LocBox->setReadOnly(true);
+
+        formLayout->setWidget(4, QFormLayout::FieldRole, LocBox);
+
+        StockIdBox = new QLineEdit(groupBox);
+        StockIdBox->setObjectName(QString::fromUtf8("StockIdBox"));
+        StockIdBox->setReadOnly(true);
+
+        formLayout->setWidget(5, QFormLayout::FieldRole, StockIdBox);
+
+
+        gridLayout_4->addWidget(groupBox, 1, 0, 1, 1);
 
         stackedWidget->addWidget(page_2);
 
@@ -251,7 +390,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -261,8 +400,15 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Inventory Table", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "Inventory Detals", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "Return", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "Inventory Details", nullptr));
+        groupBox->setTitle(QString());
+        label_4->setText(QCoreApplication::translate("MainWindow", "ProductID", nullptr));
+        label_6->setText(QCoreApplication::translate("MainWindow", "InventoryID", nullptr));
+        label_3->setText(QCoreApplication::translate("MainWindow", "Quantity", nullptr));
+        label_5->setText(QCoreApplication::translate("MainWindow", "UpdateDate", nullptr));
+        label_7->setText(QCoreApplication::translate("MainWindow", "Location", nullptr));
+        label_8->setText(QCoreApplication::translate("MainWindow", "StockID", nullptr));
         invenBtn->setText(QCoreApplication::translate("MainWindow", "Inventory", nullptr));
         itemBtn->setText(QCoreApplication::translate("MainWindow", "Item Look Up", nullptr));
         recentBtn->setText(QCoreApplication::translate("MainWindow", "Recent Orders", nullptr));
