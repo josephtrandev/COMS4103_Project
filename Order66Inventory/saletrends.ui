@@ -13,6 +13,12 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+	font-family: &quot;Nirmala UI&quot;;
+	background-color: #F8F8FF;
+}</string>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <widget class="QStackedWidget" name="stackedWidget">
@@ -21,18 +27,39 @@
      </property>
      <widget class="QWidget" name="page">
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0" alignment="Qt::AlignHCenter">
+       <item row="0" column="0">
         <widget class="QLabel" name="label">
          <property name="styleSheet">
-          <string notr="true">font-size: 20px bold;</string>
+          <string notr="true">font-size: 22pt;
+font-weight: bold;
+border-bottom: 2px solid;
+color: rgb(54, 73, 88);
+padding-bottom: 5px;</string>
          </property>
          <property name="text">
           <string>Sales Trend</string>
          </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QTableView" name="saleTrendTb"/>
+        <widget class="QTableView" name="saleTrendTb">
+         <property name="styleSheet">
+          <string notr="true">QTableView {
+	border: 2px solid black;
+	background-color: #F8F8FF;
+}
+
+QHeaderView{
+	font-size: 14px;
+	font-weight: bold;
+	background-color: #C8C8C8;
+	padding: 8px;
+}</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>

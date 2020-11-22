@@ -67,13 +67,13 @@ void MainWindow::on_inventoryTable_clicked(const QModelIndex &index)
         conn.dbConnectionOpen();
     }
     ui->stackedWidget->setCurrentIndex(4);
-    QString val = ui->inventoryTable->model()->data(index).toString();
-    qDebug()<<" 1";
-    qDebug() <<val;
-    if(!conn.db.isOpen()){
 
-    }
-   QSqlQuery* qry = new QSqlQuery(conn.db);
+    QString val = ui->inventoryTable->model()->data(index).toString();
+    QString stockId;
+
+   // qDebug()<<" 1";
+   // qDebug() <<val;
+    QSqlQuery* qry = new QSqlQuery(conn.db);
     qry->prepare("SELECT * FROM Inventory WHERE ProductID = '"+val+"'");
     if(qry->exec()){
         while(qry->next()){
@@ -83,6 +83,17 @@ void MainWindow::on_inventoryTable_clicked(const QModelIndex &index)
             ui->updateDateBox->setText(qry->value(3).toString());
             ui->LocBox->setText(qry->value(4).toString());
             ui->StockIdBox->setText(qry->value(5).toString());
+            stockId = qry->value(5).toString();
+        }
+    }
+
+    //Stock Details Query
+    QSqlQuery* stockQry = new QSqlQuery(conn.db);
+    stockQry->prepare("SELECT SupplierID, QuantityOrdered, DateOrdered, DateRecieved "
+                      "FROM Inventory_Supplier WHERE StockID = '"+stockId+"'");
+    if(stockQry->exec()){
+        while(stockQry->next()){
+            ui->supplierBox->setText(stockQry->value(0).toString());
         }
     }
 }

@@ -44,7 +44,10 @@ public:
         if (ItemLookUp->objectName().isEmpty())
             ItemLookUp->setObjectName(QString::fromUtf8("ItemLookUp"));
         ItemLookUp->resize(715, 461);
-        ItemLookUp->setStyleSheet(QString::fromUtf8(""));
+        ItemLookUp->setStyleSheet(QString::fromUtf8("*{\n"
+"	background-color: #F8F8FF;\n"
+"	font-family: \"Nirmala UI\";\n"
+"}"));
         gridLayout = new QGridLayout(ItemLookUp);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         stackedWidget = new QStackedWidget(ItemLookUp);
@@ -66,34 +69,39 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
         groupBox->setSizePolicy(sizePolicy);
+        groupBox->setStyleSheet(QString::fromUtf8("border: none;\n"
+"background-color: #F8F8FF;"));
         verticalLayout_2 = new QVBoxLayout(groupBox);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         label = new QLabel(groupBox);
         label->setObjectName(QString::fromUtf8("label"));
         QFont font;
-        font.setFamily(QString::fromUtf8("Open Sans"));
+        font.setFamily(QString::fromUtf8("Nirmala UI"));
+        font.setPointSize(22);
         font.setBold(true);
         font.setWeight(75);
         label->setFont(font);
-        label->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	font-size: 20px;\n"
-"	border: none;\n"
-"	background-color: none;\n"
-"	color: rgb(54, 73, 88);\n"
-"}"));
+        label->setStyleSheet(QString::fromUtf8("font-size: 22pt;\n"
+"color: rgb(54, 73, 88);\n"
+"border-bottom: 2px solid;\n"
+"padding-bottom: 5px;"));
+        label->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_2->addWidget(label, 0, Qt::AlignHCenter|Qt::AlignTop);
+        verticalLayout_2->addWidget(label);
 
         label_2 = new QLabel(groupBox);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setFont(font);
-        label_2->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	border: none;\n"
-"	background-color: none;\n"
-"	color: rgb(54, 73, 88);\n"
-"}"));
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("Nirmala UI"));
+        font1.setPointSize(14);
+        font1.setBold(true);
+        font1.setWeight(75);
+        label_2->setFont(font1);
+        label_2->setStyleSheet(QString::fromUtf8("font-size: 14pt;\n"
+"	color: rgb(54, 73, 88);"));
+        label_2->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_2->addWidget(label_2, 0, Qt::AlignHCenter);
+        verticalLayout_2->addWidget(label_2);
 
         getItemText = new QLineEdit(groupBox);
         getItemText->setObjectName(QString::fromUtf8("getItemText"));
@@ -116,7 +124,11 @@ public:
         lookUpBtn->setSizePolicy(sizePolicy1);
         lookUpBtn->setMinimumSize(QSize(180, 40));
         lookUpBtn->setMaximumSize(QSize(180, 40));
-        lookUpBtn->setFont(font);
+        QFont font2;
+        font2.setFamily(QString::fromUtf8("Nirmala UI"));
+        font2.setBold(true);
+        font2.setWeight(75);
+        lookUpBtn->setFont(font2);
         lookUpBtn->setCursor(QCursor(Qt::PointingHandCursor));
         lookUpBtn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font-size: 20px;\n"
@@ -138,8 +150,15 @@ public:
         itemLookUpTbl = new QTableView(groupBox);
         itemLookUpTbl->setObjectName(QString::fromUtf8("itemLookUpTbl"));
         itemLookUpTbl->setStyleSheet(QString::fromUtf8("QTableView {\n"
-"	border: 2 solid black;\n"
-"	background-color: white;\n"
+"	border: 2px solid black;\n"
+"	background-color: #F8F8FF;\n"
+"}\n"
+"\n"
+"QHeaderView{\n"
+"	font-size: 14px;\n"
+"	font-weight: bold;\n"
+"	background-color: #C8C8C8;\n"
+"	padding: 8px;\n"
 "}"));
 
         verticalLayout_2->addWidget(itemLookUpTbl);
@@ -163,7 +182,7 @@ public:
     void retranslateUi(QWidget *ItemLookUp)
     {
         ItemLookUp->setWindowTitle(QCoreApplication::translate("ItemLookUp", "Form", nullptr));
-        groupBox->setTitle(QCoreApplication::translate("ItemLookUp", "Item Look Up", nullptr));
+        groupBox->setTitle(QString());
         label->setText(QCoreApplication::translate("ItemLookUp", "Item Look Up", nullptr));
         label_2->setText(QCoreApplication::translate("ItemLookUp", "Enter Item ID:", nullptr));
 #if QT_CONFIG(tooltip)

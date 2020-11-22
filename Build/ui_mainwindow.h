@@ -57,6 +57,14 @@ public:
     QLabel *label_8;
     QLineEdit *LocBox;
     QLineEdit *StockIdBox;
+    QLabel *label_9;
+    QLabel *label_10;
+    QLabel *label_11;
+    QLabel *label_12;
+    QLineEdit *supplierBox;
+    QLineEdit *qOrderBox;
+    QLineEdit *orderDateBox;
+    QLineEdit *orderReceiveBox;
     QVBoxLayout *verticalLayout;
     QPushButton *invenBtn;
     QPushButton *itemBtn;
@@ -76,7 +84,11 @@ public:
         sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
         MainWindow->setSizePolicy(sizePolicy);
         MainWindow->setMinimumSize(QSize(1000, 0));
-        MainWindow->setStyleSheet(QString::fromUtf8("background-color: #F8F8FF;"));
+        MainWindow->setStyleSheet(QString::fromUtf8("*{\n"
+"	font-family:  \"Nirmala UI\";\n"
+"	background-color: #F8F8FF;\n"
+"}\n"
+""));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         centralwidget->setStyleSheet(QString::fromUtf8("QWidget {\n"
@@ -104,6 +116,7 @@ public:
 "	padding: 8px;\n"
 "}"));
         inventoryTable->horizontalHeader()->setMinimumSectionSize(50);
+        inventoryTable->verticalHeader()->setCascadingSectionResizes(false);
         inventoryTable->verticalHeader()->setMinimumSectionSize(28);
 
         gridLayout_3->addWidget(inventoryTable, 1, 0, 1, 1);
@@ -112,17 +125,16 @@ public:
         label->setObjectName(QString::fromUtf8("label"));
         label->setMaximumSize(QSize(16777215, 16777215));
         QFont font;
-        font.setFamily(QString::fromUtf8("Open Sans"));
+        font.setFamily(QString::fromUtf8("Nirmala UI"));
+        font.setPointSize(22);
         font.setBold(true);
         font.setWeight(75);
         label->setFont(font);
         label->setLayoutDirection(Qt::LeftToRight);
-        label->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	font-size: 20px;\n"
-"	border: none;\n"
-"	background-color: none;\n"
-"	color: rgb(54, 73, 88);\n"
-"}"));
+        label->setStyleSheet(QString::fromUtf8("font-size: 22pt;\n"
+"border-bottom: 2px solid;\n"
+"padding-bottom: 5px;\n"
+"color: rgb(54, 73, 88);"));
         label->setAlignment(Qt::AlignCenter);
 
         gridLayout_3->addWidget(label, 0, 0, 1, 1);
@@ -156,8 +168,10 @@ public:
         label_2 = new QLabel(page_2);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setMaximumSize(QSize(16777215, 50));
-        label_2->setStyleSheet(QString::fromUtf8("font-size:20px;\n"
-""));
+        label_2->setStyleSheet(QString::fromUtf8("font-size: 22pt;\n"
+"font-weight:bold;\n"
+"border-bottom: 2px solid;\n"
+"padding-bottom: 5px;"));
         label_2->setAlignment(Qt::AlignCenter);
 
         gridLayout_4->addWidget(label_2, 0, 0, 1, 1);
@@ -171,12 +185,17 @@ public:
 "QLineEdit{\n"
 "	font-size: 18px;\n"
 "	padding: 5px;\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"	font-size: 18px;\n"
+"	padding:5px;\n"
 "}"));
         formLayout = new QFormLayout(groupBox);
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
         label_4 = new QLabel(groupBox);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setStyleSheet(QString::fromUtf8("font-size: 18px;\n"
+        label_4->setStyleSheet(QString::fromUtf8("font-size: 14pt;\n"
 "\n"
 "padding: 5px;"));
 
@@ -258,6 +277,50 @@ public:
 
         formLayout->setWidget(5, QFormLayout::FieldRole, StockIdBox);
 
+        label_9 = new QLabel(groupBox);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+
+        formLayout->setWidget(6, QFormLayout::LabelRole, label_9);
+
+        label_10 = new QLabel(groupBox);
+        label_10->setObjectName(QString::fromUtf8("label_10"));
+
+        formLayout->setWidget(7, QFormLayout::LabelRole, label_10);
+
+        label_11 = new QLabel(groupBox);
+        label_11->setObjectName(QString::fromUtf8("label_11"));
+
+        formLayout->setWidget(8, QFormLayout::LabelRole, label_11);
+
+        label_12 = new QLabel(groupBox);
+        label_12->setObjectName(QString::fromUtf8("label_12"));
+
+        formLayout->setWidget(9, QFormLayout::LabelRole, label_12);
+
+        supplierBox = new QLineEdit(groupBox);
+        supplierBox->setObjectName(QString::fromUtf8("supplierBox"));
+        supplierBox->setReadOnly(true);
+
+        formLayout->setWidget(6, QFormLayout::FieldRole, supplierBox);
+
+        qOrderBox = new QLineEdit(groupBox);
+        qOrderBox->setObjectName(QString::fromUtf8("qOrderBox"));
+        qOrderBox->setReadOnly(true);
+
+        formLayout->setWidget(7, QFormLayout::FieldRole, qOrderBox);
+
+        orderDateBox = new QLineEdit(groupBox);
+        orderDateBox->setObjectName(QString::fromUtf8("orderDateBox"));
+        orderDateBox->setReadOnly(true);
+
+        formLayout->setWidget(8, QFormLayout::FieldRole, orderDateBox);
+
+        orderReceiveBox = new QLineEdit(groupBox);
+        orderReceiveBox->setObjectName(QString::fromUtf8("orderReceiveBox"));
+        orderReceiveBox->setReadOnly(true);
+
+        formLayout->setWidget(9, QFormLayout::FieldRole, orderReceiveBox);
+
 
         gridLayout_4->addWidget(groupBox, 1, 0, 1, 1);
 
@@ -280,7 +343,11 @@ public:
         invenBtn->setSizePolicy(sizePolicy1);
         invenBtn->setMinimumSize(QSize(180, 60));
         invenBtn->setMaximumSize(QSize(180, 60));
-        invenBtn->setFont(font);
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("Nirmala UI"));
+        font1.setBold(true);
+        font1.setWeight(75);
+        invenBtn->setFont(font1);
         invenBtn->setCursor(QCursor(Qt::PointingHandCursor));
         invenBtn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font-size: 20px;\n"
@@ -307,7 +374,7 @@ public:
         itemBtn->setSizePolicy(sizePolicy1);
         itemBtn->setMinimumSize(QSize(180, 60));
         itemBtn->setMaximumSize(QSize(180, 60));
-        itemBtn->setFont(font);
+        itemBtn->setFont(font1);
         itemBtn->setCursor(QCursor(Qt::PointingHandCursor));
         itemBtn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font-size: 20px;\n"
@@ -332,7 +399,7 @@ public:
         recentBtn->setSizePolicy(sizePolicy1);
         recentBtn->setMinimumSize(QSize(180, 60));
         recentBtn->setMaximumSize(QSize(180, 60));
-        recentBtn->setFont(font);
+        recentBtn->setFont(font1);
         recentBtn->setCursor(QCursor(Qt::PointingHandCursor));
         recentBtn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font-size: 20px;\n"
@@ -357,7 +424,7 @@ public:
         trendBtn->setSizePolicy(sizePolicy1);
         trendBtn->setMinimumSize(QSize(180, 60));
         trendBtn->setMaximumSize(QSize(180, 60));
-        trendBtn->setFont(font);
+        trendBtn->setFont(font1);
         trendBtn->setCursor(QCursor(Qt::PointingHandCursor));
         trendBtn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font-size: 20px;\n"
@@ -390,7 +457,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -409,6 +476,10 @@ public:
         label_5->setText(QCoreApplication::translate("MainWindow", "UpdateDate", nullptr));
         label_7->setText(QCoreApplication::translate("MainWindow", "Location", nullptr));
         label_8->setText(QCoreApplication::translate("MainWindow", "StockID", nullptr));
+        label_9->setText(QCoreApplication::translate("MainWindow", "SupplierID", nullptr));
+        label_10->setText(QCoreApplication::translate("MainWindow", "Quantity Ordered", nullptr));
+        label_11->setText(QCoreApplication::translate("MainWindow", "Date Ordered", nullptr));
+        label_12->setText(QCoreApplication::translate("MainWindow", "Date Received", nullptr));
         invenBtn->setText(QCoreApplication::translate("MainWindow", "Inventory", nullptr));
         itemBtn->setText(QCoreApplication::translate("MainWindow", "Item Look Up", nullptr));
         recentBtn->setText(QCoreApplication::translate("MainWindow", "Recent Orders", nullptr));

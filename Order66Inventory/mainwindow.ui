@@ -26,7 +26,11 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #F8F8FF;</string>
+   <string notr="true">*{
+	font-family:  &quot;Nirmala UI&quot;;
+	background-color: #F8F8FF;
+}
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
@@ -44,7 +48,7 @@
          <string notr="true">background-color: #F8F8FF;</string>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="page">
          <layout class="QGridLayout" name="gridLayout_3">
@@ -64,6 +68,9 @@
             <attribute name="horizontalHeaderMinimumSectionSize">
              <number>50</number>
             </attribute>
+            <attribute name="verticalHeaderCascadingSectionResizes">
+             <bool>false</bool>
+            </attribute>
             <attribute name="verticalHeaderMinimumSectionSize">
              <number>28</number>
             </attribute>
@@ -79,8 +86,8 @@
             </property>
             <property name="font">
              <font>
-              <family>Open Sans</family>
-              <pointsize>-1</pointsize>
+              <family>Nirmala UI</family>
+              <pointsize>22</pointsize>
               <weight>75</weight>
               <bold>true</bold>
              </font>
@@ -89,12 +96,10 @@
              <enum>Qt::LeftToRight</enum>
             </property>
             <property name="styleSheet">
-             <string notr="true">QLabel {
-	font-size: 20px;
-	border: none;
-	background-color: none;
-	color: rgb(54, 73, 88);
-}</string>
+             <string notr="true">font-size: 22pt;
+border-bottom: 2px solid;
+padding-bottom: 5px;
+color: rgb(54, 73, 88);</string>
             </property>
             <property name="text">
              <string>Inventory Table</string>
@@ -149,8 +154,10 @@ QPushButton:Hover{
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">font-size:20px;
-</string>
+             <string notr="true">font-size: 22pt;
+font-weight:bold;
+border-bottom: 2px solid;
+padding-bottom: 5px;</string>
             </property>
             <property name="text">
              <string>Inventory Details</string>
@@ -170,6 +177,11 @@ border: none;
 QLineEdit{
 	font-size: 18px;
 	padding: 5px;
+}
+
+QLabel{
+	font-size: 18px;
+	padding:5px;
 }</string>
             </property>
             <property name="title">
@@ -179,7 +191,7 @@ QLineEdit{
              <item row="0" column="0">
               <widget class="QLabel" name="label_4">
                <property name="styleSheet">
-                <string notr="true">font-size: 18px;
+                <string notr="true">font-size: 14pt;
 
 padding: 5px;</string>
                </property>
@@ -301,6 +313,62 @@ padding: 5px;</string>
                </property>
               </widget>
              </item>
+             <item row="6" column="0">
+              <widget class="QLabel" name="label_9">
+               <property name="text">
+                <string>SupplierID</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="0">
+              <widget class="QLabel" name="label_10">
+               <property name="text">
+                <string>Quantity Ordered</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="0">
+              <widget class="QLabel" name="label_11">
+               <property name="text">
+                <string>Date Ordered</string>
+               </property>
+              </widget>
+             </item>
+             <item row="9" column="0">
+              <widget class="QLabel" name="label_12">
+               <property name="text">
+                <string>Date Received</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="1">
+              <widget class="QLineEdit" name="supplierBox">
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="1">
+              <widget class="QLineEdit" name="qOrderBox">
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="1">
+              <widget class="QLineEdit" name="orderDateBox">
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="9" column="1">
+              <widget class="QLineEdit" name="orderReceiveBox">
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
             </layout>
            </widget>
           </item>
@@ -337,7 +405,7 @@ padding: 5px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Open Sans</family>
+          <family>Nirmala UI</family>
           <pointsize>-1</pointsize>
           <weight>75</weight>
           <bold>true</bold>
@@ -391,7 +459,7 @@ QPushButton:Hover{
         </property>
         <property name="font">
          <font>
-          <family>Open Sans</family>
+          <family>Nirmala UI</family>
           <pointsize>-1</pointsize>
           <weight>75</weight>
           <bold>true</bold>
@@ -443,7 +511,7 @@ QPushButton:Hover{
         </property>
         <property name="font">
          <font>
-          <family>Open Sans</family>
+          <family>Nirmala UI</family>
           <pointsize>-1</pointsize>
           <weight>75</weight>
           <bold>true</bold>
@@ -495,7 +563,7 @@ QPushButton:Hover{
         </property>
         <property name="font">
          <font>
-          <family>Open Sans</family>
+          <family>Nirmala UI</family>
           <pointsize>-1</pointsize>
           <weight>75</weight>
           <bold>true</bold>

@@ -35,6 +35,10 @@ public:
         if (saleTrends->objectName().isEmpty())
             saleTrends->setObjectName(QString::fromUtf8("saleTrends"));
         saleTrends->resize(400, 300);
+        saleTrends->setStyleSheet(QString::fromUtf8("*{\n"
+"	font-family: \"Nirmala UI\";\n"
+"	background-color: #F8F8FF;\n"
+"}"));
         gridLayout = new QGridLayout(saleTrends);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         stackedWidget = new QStackedWidget(saleTrends);
@@ -45,12 +49,28 @@ public:
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         label = new QLabel(page);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setStyleSheet(QString::fromUtf8("font-size: 20px bold;"));
+        label->setStyleSheet(QString::fromUtf8("font-size: 22pt;\n"
+"font-weight: bold;\n"
+"border-bottom: 2px solid;\n"
+"color: rgb(54, 73, 88);\n"
+"padding-bottom: 5px;"));
+        label->setAlignment(Qt::AlignCenter);
 
-        gridLayout_2->addWidget(label, 0, 0, 1, 1, Qt::AlignHCenter);
+        gridLayout_2->addWidget(label, 0, 0, 1, 1);
 
         saleTrendTb = new QTableView(page);
         saleTrendTb->setObjectName(QString::fromUtf8("saleTrendTb"));
+        saleTrendTb->setStyleSheet(QString::fromUtf8("QTableView {\n"
+"	border: 2px solid black;\n"
+"	background-color: #F8F8FF;\n"
+"}\n"
+"\n"
+"QHeaderView{\n"
+"	font-size: 14px;\n"
+"	font-weight: bold;\n"
+"	background-color: #C8C8C8;\n"
+"	padding: 8px;\n"
+"}"));
 
         gridLayout_2->addWidget(saleTrendTb, 1, 0, 1, 1);
 
