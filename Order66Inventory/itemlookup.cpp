@@ -3,6 +3,7 @@
 
 #include <QSqlQueryModel>
 #include <QSqlQuery>
+#include <QMessageBox>
 
 ItemLookUp::ItemLookUp(QWidget *parent) :
     QWidget(parent),
@@ -34,6 +35,17 @@ void ItemLookUp::on_lookUpBtn_clicked()
     ui->itemLookUpTbl->setStyleSheet("alternate-background-color: #84A98C");
     ui->itemLookUpTbl->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     if(model->rowCount() == 0){
+        switch( QMessageBox::warning(
+                    this,
+                    tr("Invalid Product ID"),
+                    tr("No item with that ID was found"),
+
+                    QMessageBox::Close ) )
+        {
+          default:
+            qDebug( "close" );
+            break;
+        }
         qDebug() << "No value Found!" << Qt::endl;
     }
     ui->getItemText->clear();
