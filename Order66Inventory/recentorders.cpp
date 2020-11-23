@@ -26,7 +26,7 @@ void recentOrders::popOrderTable(){
     QSqlQueryModel * model = new QSqlQueryModel;
     QSqlQuery* qry = new QSqlQuery(conn.db);
 
-    qry->prepare("SELECT * FROM Orders");
+    qry->prepare("SELECT * FROM Orders ORDER BY OrderDate DESC");
     qry->exec();
     model->setQuery(*qry);
     ui->orderTable->setModel(model);

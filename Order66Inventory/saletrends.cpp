@@ -25,7 +25,7 @@ void saleTrends::popSaleTable(){
     QSqlQueryModel * model = new QSqlQueryModel;
     QSqlQuery* qry = new QSqlQuery(conn.db);
 
-    qry->prepare("SELECT * FROM Sales");
+    qry->prepare("SELECT * FROM Sales ORDER BY ProductID");
     qry->exec();
     model->setQuery(*qry);
     ui->saleTrendTb->setModel(model);
@@ -46,20 +46,20 @@ void saleTrends::qryPopTable(QString qryName){
 
 void saleTrends::on_comboBox_currentIndexChanged(int index)
 {
-    QString JanQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'January' GROUP BY ProductID";
-    QString FebQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'February' GROUP BY ProductID";
-    QString MarQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'March' GROUP BY ProductID";
-    QString AprQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'April' GROUP BY ProductID";
-    QString MayQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'May' GROUP BY ProductID";
-    QString JunQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'June' GROUP BY ProductID";
-    QString JulQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'July' GROUP BY ProductID";
-    QString AugQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'August' GROUP BY ProductID";
-    QString SepQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'September' GROUP BY ProductID";
-    QString OctQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'October' GROUP BY ProductID";
-    QString NovQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'November' GROUP BY ProductID";
-    QString DecQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'December' GROUP BY ProductID";
-    QString AllQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales GROUP BY ProductID;";
-    QString noFilter = "SELECT * FROM Sales";
+    QString JanQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'January' GROUP BY ProductID ORDER BY AmountSold DESC";
+    QString FebQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'February' GROUP BY ProductID ORDER BY AmountSold DESC";
+    QString MarQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'March' GROUP BY ProductID ORDER BY AmountSold DESC";
+    QString AprQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'April' GROUP BY ProductID ORDER BY AmountSold DESC";
+    QString MayQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'May' GROUP BY ProductID ORDER BY AmountSold DESC";
+    QString JunQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'June' GROUP BY ProductID ORDER BY AmountSold DESC";
+    QString JulQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'July' GROUP BY ProductID ORDER BY AmountSold DESC";
+    QString AugQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'August' GROUP BY ProductID ORDER BY AmountSold DESC";
+    QString SepQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'September' GROUP BY ProductID ORDER BY AmountSold DESC";
+    QString OctQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'October' GROUP BY ProductID ORDER BY AmountSold DESC";
+    QString NovQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'November' GROUP BY ProductID ORDER BY AmountSold DESC";
+    QString DecQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'December' GROUP BY ProductID ORDER BY AmountSold DESC";
+    QString AllQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales GROUP BY ProductID ORDER BY AmountSold DESC";
+    QString noFilter = "SELECT * FROM Sales ORDER BY ProductID ASC";
 
     int currIndex = index;
 
@@ -129,7 +129,7 @@ void saleTrends::on_goToAdvSrch_clicked()
 
 void saleTrends::on_secProductId_currentIndexChanged(const QString &arg1)
 {
-    QString qryType = "SELECT ProductID, ProductName, ProductStyle, SUM(QuantitySold) AS TotalSold, ProductPrice AS PricePerEach, MONTHNAME(SoldDate) AS MonthSoldIn, YEAR(SoldDate) AS YearSoldIn FROM Sales WHERE ProductID = '"+arg1+"' GROUP BY MonthSoldIn ORDER BY MONTH(SoldDate) ASC";
+    QString qryType = "SELECT ProductID, ProductName, ProductStyle, MONTHNAME(SoldDate) AS MonthSoldIn, SUM(QuantitySold) AS TotalSold, ProductPrice AS PricePerEach, YEAR(SoldDate) AS YearSoldIn FROM Sales WHERE ProductID = '"+arg1+"' GROUP BY MonthSoldIn ORDER BY MONTH(SoldDate) ASC";
     QSqlQueryModel * model = new QSqlQueryModel;
     QSqlQuery* qry = new QSqlQuery(conn.db);
 
