@@ -70,9 +70,6 @@ void MainWindow::on_inventoryTable_clicked(const QModelIndex &index)
 
     QString val = ui->inventoryTable->model()->data(index).toString();
     QString stockId;
-
-   // qDebug()<<" 1";
-   // qDebug() <<val;
     QSqlQuery* qry = new QSqlQuery(conn.db);
     qry->prepare("SELECT * FROM Inventory WHERE ProductID = '"+val+"'");
     if(qry->exec()){

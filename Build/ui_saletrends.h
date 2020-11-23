@@ -20,6 +20,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTableView>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -39,8 +40,13 @@ public:
     QLabel *label_2;
     QComboBox *comboBox;
     QWidget *page_2;
+    QGridLayout *gridLayout_3;
     QLabel *label_3;
     QPushButton *rtnToSaleTrend;
+    QGroupBox *groupBox_2;
+    QVBoxLayout *verticalLayout;
+    QComboBox *secProductId;
+    QTableView *advSalesTrendTB;
 
     void setupUi(QWidget *saleTrends)
     {
@@ -136,6 +142,7 @@ public:
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->addItem(QString());
+        comboBox->addItem(QString());
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
         comboBox->setStyleSheet(QString::fromUtf8("font: 12pt \"Nirmala UI\";"));
 
@@ -147,17 +154,23 @@ public:
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName(QString::fromUtf8("page_2"));
+        gridLayout_3 = new QGridLayout(page_2);
+        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         label_3 = new QLabel(page_2);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(170, 40, 391, 71));
+        label_3->setMaximumSize(QSize(16777215, 50));
         label_3->setStyleSheet(QString::fromUtf8("font-size: 22pt;\n"
 "font-weight: bold;\n"
 "border-bottom: 2px solid;\n"
 "color: rgb(54, 73, 88);\n"
 "padding-bottom: 5px;"));
+        label_3->setAlignment(Qt::AlignCenter);
+
+        gridLayout_3->addWidget(label_3, 0, 0, 1, 1);
+
         rtnToSaleTrend = new QPushButton(page_2);
         rtnToSaleTrend->setObjectName(QString::fromUtf8("rtnToSaleTrend"));
-        rtnToSaleTrend->setGeometry(QRect(190, 200, 271, 71));
+        rtnToSaleTrend->setMinimumSize(QSize(0, 45));
         rtnToSaleTrend->setCursor(QCursor(Qt::PointingHandCursor));
         rtnToSaleTrend->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font-size: 20px;\n"
@@ -173,6 +186,26 @@ public:
 "	color: #f8f8ff;\n"
 "	border: 2px solid white;\n"
 "}"));
+
+        gridLayout_3->addWidget(rtnToSaleTrend, 2, 0, 1, 1);
+
+        groupBox_2 = new QGroupBox(page_2);
+        groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
+        verticalLayout = new QVBoxLayout(groupBox_2);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        secProductId = new QComboBox(groupBox_2);
+        secProductId->setObjectName(QString::fromUtf8("secProductId"));
+
+        verticalLayout->addWidget(secProductId);
+
+        advSalesTrendTB = new QTableView(groupBox_2);
+        advSalesTrendTB->setObjectName(QString::fromUtf8("advSalesTrendTB"));
+
+        verticalLayout->addWidget(advSalesTrendTB);
+
+
+        gridLayout_3->addWidget(groupBox_2, 1, 0, 1, 1);
+
         stackedWidget->addWidget(page_2);
 
         gridLayout->addWidget(stackedWidget, 0, 0, 1, 1);
@@ -193,22 +226,24 @@ public:
         goToAdvSrch->setText(QCoreApplication::translate("saleTrends", "Advanced Search", nullptr));
         groupBox->setTitle(QString());
         label_2->setText(QCoreApplication::translate("saleTrends", "Filter By:", nullptr));
-        comboBox->setItemText(0, QCoreApplication::translate("saleTrends", "All", nullptr));
-        comboBox->setItemText(1, QCoreApplication::translate("saleTrends", "January", nullptr));
-        comboBox->setItemText(2, QCoreApplication::translate("saleTrends", "Febuary", nullptr));
-        comboBox->setItemText(3, QCoreApplication::translate("saleTrends", "March", nullptr));
-        comboBox->setItemText(4, QCoreApplication::translate("saleTrends", "April", nullptr));
-        comboBox->setItemText(5, QCoreApplication::translate("saleTrends", "May", nullptr));
-        comboBox->setItemText(6, QCoreApplication::translate("saleTrends", "June", nullptr));
-        comboBox->setItemText(7, QCoreApplication::translate("saleTrends", "July", nullptr));
-        comboBox->setItemText(8, QCoreApplication::translate("saleTrends", "August", nullptr));
-        comboBox->setItemText(9, QCoreApplication::translate("saleTrends", "September", nullptr));
-        comboBox->setItemText(10, QCoreApplication::translate("saleTrends", "October", nullptr));
-        comboBox->setItemText(11, QCoreApplication::translate("saleTrends", "November", nullptr));
-        comboBox->setItemText(12, QCoreApplication::translate("saleTrends", "December", nullptr));
+        comboBox->setItemText(0, QCoreApplication::translate("saleTrends", "--No Filter--", nullptr));
+        comboBox->setItemText(1, QCoreApplication::translate("saleTrends", "All", nullptr));
+        comboBox->setItemText(2, QCoreApplication::translate("saleTrends", "January", nullptr));
+        comboBox->setItemText(3, QCoreApplication::translate("saleTrends", "February", nullptr));
+        comboBox->setItemText(4, QCoreApplication::translate("saleTrends", "March", nullptr));
+        comboBox->setItemText(5, QCoreApplication::translate("saleTrends", "April", nullptr));
+        comboBox->setItemText(6, QCoreApplication::translate("saleTrends", "May", nullptr));
+        comboBox->setItemText(7, QCoreApplication::translate("saleTrends", "June", nullptr));
+        comboBox->setItemText(8, QCoreApplication::translate("saleTrends", "July", nullptr));
+        comboBox->setItemText(9, QCoreApplication::translate("saleTrends", "August", nullptr));
+        comboBox->setItemText(10, QCoreApplication::translate("saleTrends", "September", nullptr));
+        comboBox->setItemText(11, QCoreApplication::translate("saleTrends", "October", nullptr));
+        comboBox->setItemText(12, QCoreApplication::translate("saleTrends", "November", nullptr));
+        comboBox->setItemText(13, QCoreApplication::translate("saleTrends", "December", nullptr));
 
         label_3->setText(QCoreApplication::translate("saleTrends", "Advance Sales Trend Search", nullptr));
         rtnToSaleTrend->setText(QCoreApplication::translate("saleTrends", "Return To Sales Trend", nullptr));
+        groupBox_2->setTitle(QString());
     } // retranslateUi
 
 };

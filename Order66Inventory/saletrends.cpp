@@ -46,64 +46,66 @@ void saleTrends::qryPopTable(QString qryName){
 
 void saleTrends::on_comboBox_currentIndexChanged(int index)
 {
-    QString JanQry = "SELECT * FROM Sales WHERE SoldDate BETWEEN '2020-01-01' AND '2020-01-30'";
-    QString FebQry = "SELECT * FROM Sales WHERE SoldDate BETWEEN '2020-02-01' AND '2020-02-29'";
-    QString MarQry = "SELECT * FROM Sales WHERE SoldDate BETWEEN '2020-03-01' AND '2020-03-30'";
-    QString AprQry = "SELECT * FROM Sales WHERE SoldDate BETWEEN '2020-04-01' AND '2020-04-31'";
-    QString MayQry = "SELECT * FROM Sales WHERE SoldDate BETWEEN '2020-05-01' AND '2020-05-30'";
-    QString JunQry = "SELECT * FROM Sales WHERE SoldDate BETWEEN '2020-06-01' AND '2020-06-31'";
-    QString JulQry = "SELECT * FROM Sales WHERE SoldDate BETWEEN '2020-07-01' AND '2020-07-30'";
-    QString AugQry = "SELECT * FROM Sales WHERE SoldDate BETWEEN '2020-08-01' AND '2020-08-31'";
-    QString SepQry = "SELECT * FROM Sales WHERE SoldDate BETWEEN '2020-09-01' AND '2020-09-30'";
-    QString OctQry = "SELECT * FROM Sales WHERE SoldDate BETWEEN '2020-10-01' AND '2020-10-31'";
-    QString NovQry = "SELECT * FROM Sales WHERE SoldDate BETWEEN '2020-11-01' AND '2020-11-30'";
-    QString DecQry = "SELECT * FROM Sales WHERE SoldDate BETWEEN '2020-12-01' AND '2020-12-31'";
-    QString AllQry = "SELECT * FROM Sales";
+    QString JanQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'January' GROUP BY ProductID";
+    QString FebQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'February' GROUP BY ProductID";
+    QString MarQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'March' GROUP BY ProductID";
+    QString AprQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'April' GROUP BY ProductID";
+    QString MayQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'May' GROUP BY ProductID";
+    QString JunQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'June' GROUP BY ProductID";
+    QString JulQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'July' GROUP BY ProductID";
+    QString AugQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'August' GROUP BY ProductID";
+    QString SepQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'September' GROUP BY ProductID";
+    QString OctQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'October' GROUP BY ProductID";
+    QString NovQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'November' GROUP BY ProductID";
+    QString DecQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales WHERE monthname(SoldDate) = 'December' GROUP BY ProductID";
+    QString AllQry = "SELECT ProductID, ProductName, SUM(QuantitySold) AS AmountSold, YEAR(SoldDate)AS YearSoldIn FROM Sales GROUP BY ProductID;";
+    QString noFilter = "SELECT * FROM Sales";
 
     int currIndex = index;
 
     switch (currIndex) {
         case 0:
-            qryPopTable(AllQry);
+            qryPopTable(noFilter);
             break;
         case 1:
-            qryPopTable(JanQry);
+            qryPopTable(AllQry);
             break;
         case 2:
-            qryPopTable(FebQry);
+            qryPopTable(JanQry);
             break;
         case 3:
-            qryPopTable(MarQry);
+            qryPopTable(FebQry);
             break;
         case 4:
-            qryPopTable(AprQry);
+            qryPopTable(MarQry);
             break;
         case 5:
-            qryPopTable(MayQry);
+            qryPopTable(AprQry);
             break;
         case 6:
-            qryPopTable(JunQry);
+            qryPopTable(MayQry);
             break;
         case 7:
-            qryPopTable(JulQry);
+            qryPopTable(JunQry);
             break;
         case 8:
-            qryPopTable(AugQry);
+            qryPopTable(JulQry);
             break;
         case 9:
-            qryPopTable(SepQry);
+            qryPopTable(AugQry);
             break;
         case 10:
-            qryPopTable(OctQry);
+            qryPopTable(SepQry);
             break;
         case 11:
-            qryPopTable(NovQry);
+            qryPopTable(OctQry);
             break;
         case 12:
-            qryPopTable(DecQry);
+            qryPopTable(NovQry);
             break;
+        case 13:
+            qryPopTable(DecQry);
         default:
-            index = 0;
             break;
     }
 }
@@ -116,4 +118,12 @@ void saleTrends::on_rtnToSaleTrend_clicked()
 void saleTrends::on_goToAdvSrch_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
+    QSqlQueryModel * model = new QSqlQueryModel;
+    QSqlQuery* qry = new QSqlQuery(conn.db);
+
+    qry->prepare("SELECT ProductID FROM Products");
+    qry->exec();
+    model->setQuery(*qry);
+    ui->secProductId->setModel(model);
+    ui->secProductId->setCurrentIndex(-1);
 }

@@ -128,6 +128,11 @@ QPushButton:Hover{
             </property>
             <item>
              <property name="text">
+              <string>--No Filter--</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
               <string>All</string>
              </property>
             </item>
@@ -138,7 +143,7 @@ QPushButton:Hover{
             </item>
             <item>
              <property name="text">
-              <string>Febuary</string>
+              <string>February</string>
              </property>
             </item>
             <item>
@@ -199,40 +204,43 @@ QPushButton:Hover{
       </layout>
      </widget>
      <widget class="QWidget" name="page_2">
-      <widget class="QLabel" name="label_3">
-       <property name="geometry">
-        <rect>
-         <x>170</x>
-         <y>40</y>
-         <width>391</width>
-         <height>71</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font-size: 22pt;
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-size: 22pt;
 font-weight: bold;
 border-bottom: 2px solid;
 color: rgb(54, 73, 88);
 padding-bottom: 5px;</string>
-       </property>
-       <property name="text">
-        <string>Advance Sales Trend Search</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="rtnToSaleTrend">
-       <property name="geometry">
-        <rect>
-         <x>190</x>
-         <y>200</y>
-         <width>271</width>
-         <height>71</height>
-        </rect>
-       </property>
-       <property name="cursor">
-        <cursorShape>PointingHandCursor</cursorShape>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton{
+         </property>
+         <property name="text">
+          <string>Advance Sales Trend Search</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QPushButton" name="rtnToSaleTrend">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
 	font-size: 20px;
 	color: rgb(66, 85, 70);
 	font-weight: bold;
@@ -246,11 +254,28 @@ QPushButton:Hover{
 	color: #f8f8ff;
 	border: 2px solid white;
 }</string>
-       </property>
-       <property name="text">
-        <string>Return To Sales Trend</string>
-       </property>
-      </widget>
+         </property>
+         <property name="text">
+          <string>Return To Sales Trend</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="title">
+          <string/>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QComboBox" name="secProductId"/>
+          </item>
+          <item>
+           <widget class="QTableView" name="advSalesTrendTB"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
    </item>
