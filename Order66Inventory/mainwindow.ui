@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1000</width>
-    <height>600</height>
+    <height>643</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -59,11 +59,23 @@
             </property>
             <property name="styleSheet">
              <string notr="true">QHeaderView{
-	font-size: 14px;
+	font-size: 12pt;
 	font-weight: bold;
 	background-color: #C8C8C8;
-	padding: 8px;
+	padding: 10px;
+	font-family:  &quot;Nirmala UI&quot;;
+}
+
+QTableView{
+		font-family:  &quot;Nirmala UI&quot;;
+		font-size: 12pt;
 }</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>5</width>
+              <height>5</height>
+             </size>
             </property>
             <attribute name="horizontalHeaderMinimumSectionSize">
              <number>50</number>
@@ -73,6 +85,9 @@
             </attribute>
             <attribute name="verticalHeaderMinimumSectionSize">
              <number>28</number>
+            </attribute>
+            <attribute name="verticalHeaderStretchLastSection">
+             <bool>false</bool>
             </attribute>
            </widget>
           </item>

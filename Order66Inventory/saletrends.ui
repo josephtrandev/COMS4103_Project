@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>730</width>
+    <height>414</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -44,7 +44,7 @@ padding-bottom: 5px;</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
+       <item row="2" column="0">
         <widget class="QTableView" name="saleTrendTb">
          <property name="styleSheet">
           <string notr="true">QTableView {
@@ -61,7 +61,196 @@ QHeaderView{
          </property>
         </widget>
        </item>
+       <item row="3" column="0">
+        <widget class="QPushButton" name="goToAdvSrch">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	font-size: 20px;
+	color: rgb(66, 85, 70);
+	font-weight: bold;
+	background: #f8f8ff;
+	border: 2px solid #52796f;
+}
+
+QPushButton:Hover{
+	background: #52796f;
+	font-size: 24px;
+	color: #f8f8ff;
+	border: 2px solid white;
+}</string>
+         </property>
+         <property name="text">
+          <string>Advanced Search</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QGroupBox" name="groupBox">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QGroupBox{
+	Border:none;
+	margin-bottom: 5px;
+}</string>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+         <layout class="QFormLayout" name="formLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="styleSheet">
+             <string notr="true">font: 12pt &quot;Nirmala UI&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Filter By:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="comboBox">
+            <property name="styleSheet">
+             <string notr="true">font: 12pt &quot;Nirmala UI&quot;;</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>All</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>January</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Febuary</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>March</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>April</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>May</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>June</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>July</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>August</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>September</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>October</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>November</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>December</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
       </layout>
+     </widget>
+     <widget class="QWidget" name="page_2">
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>40</y>
+         <width>391</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-size: 22pt;
+font-weight: bold;
+border-bottom: 2px solid;
+color: rgb(54, 73, 88);
+padding-bottom: 5px;</string>
+       </property>
+       <property name="text">
+        <string>Advance Sales Trend Search</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="rtnToSaleTrend">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>200</y>
+         <width>271</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	font-size: 20px;
+	color: rgb(66, 85, 70);
+	font-weight: bold;
+	background: #f8f8ff;
+	border: 2px solid #52796f;
+}
+
+QPushButton:Hover{
+	background: #52796f;
+	font-size: 24px;
+	color: #f8f8ff;
+	border: 2px solid white;
+}</string>
+       </property>
+       <property name="text">
+        <string>Return To Sales Trend</string>
+       </property>
+      </widget>
      </widget>
     </widget>
    </item>

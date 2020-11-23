@@ -20,9 +20,16 @@ public:
 private slots:
 
 
+    void on_comboBox_currentIndexChanged(int index);
+
+    void on_rtnToSaleTrend_clicked();
+
+    void on_goToAdvSrch_clicked();
+
 private:
     Ui::saleTrends *ui;
     dbConnection conn;
+    void qryPopTable(QString qryName);
 };
 
 #endif // SALETRENDS_H
