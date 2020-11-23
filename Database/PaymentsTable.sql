@@ -1,9 +1,0 @@
-CREATE TABLE Payments(
-	PaymentID INT NOT NULL AUTO_INCREMENT,
-    InvoiceID INT NOT NULL,
-    PaymentType CHAR(20),
-    PaymentTotal DECIMAL(20,2),
-    PaymentDate DATETIME,
-    PRIMARY KEY(PaymentID),
-    CONSTRAINT FK_InvoiceID FOREIGN KEY (InvoiceID) REFERENCES Invoice (InvoiceID) ON UPDATE CASCADE
-)AUTO_INCREMENT=9830132;

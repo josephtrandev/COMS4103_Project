@@ -1,3 +1,4 @@
 #don't include these file for now
 connectionDB.h
 a.out
+.DS_Store
