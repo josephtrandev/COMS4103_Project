@@ -125,5 +125,19 @@ void saleTrends::on_goToAdvSrch_clicked()
     qry->exec();
     model->setQuery(*qry);
     ui->secProductId->setModel(model);
-    ui->secProductId->setCurrentIndex(-1);
+}
+
+void saleTrends::on_secProductId_currentIndexChanged(const QString &arg1)
+{
+    QString qryType = "SELECT ProductID, ProductName, ProductStyle, SUM(QuantitySold) AS TotalSold, ProductPrice AS PricePerEach, MONTHNAME(SoldDate) AS MonthSoldIn, YEAR(SoldDate) AS YearSoldIn FROM Sales WHERE ProductID = '"+arg1+"' GROUP BY MonthSoldIn ORDER BY MONTH(SoldDate) ASC";
+    QSqlQueryModel * model = new QSqlQueryModel;
+    QSqlQuery* qry = new QSqlQuery(conn.db);
+
+    qry->prepare(qryType);
+    qry->exec();
+    model->setQuery(*qry);
+    ui->advSalesTrendTB->setModel(model);
+    ui->advSalesTrendTB->setAlternatingRowColors(true);
+    ui->advSalesTrendTB->setStyleSheet("alternate-background-color: #84A98C");
+    ui->advSalesTrendTB->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }

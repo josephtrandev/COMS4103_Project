@@ -205,6 +205,22 @@ QPushButton:Hover{
      </widget>
      <widget class="QWidget" name="page_2">
       <layout class="QGridLayout" name="gridLayout_3">
+       <item row="3" column="0">
+        <widget class="QTableView" name="advSalesTrendTB">
+         <property name="styleSheet">
+          <string notr="true">QTableView {
+	border: 2px solid black;
+	background-color: #F8F8FF;
+}
+
+QHeaderView{
+	font-size: 14px;
+	font-weight: bold;
+	background-color: #C8C8C8;
+}</string>
+         </property>
+        </widget>
+       </item>
        <item row="0" column="0">
         <widget class="QLabel" name="label_3">
          <property name="maximumSize">
@@ -228,7 +244,7 @@ padding-bottom: 5px;</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
+       <item row="4" column="0">
         <widget class="QPushButton" name="rtnToSaleTrend">
          <property name="minimumSize">
           <size>
@@ -260,17 +276,34 @@ QPushButton:Hover{
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
+       <item row="2" column="0">
         <widget class="QGroupBox" name="groupBox_2">
+         <property name="styleSheet">
+          <string notr="true">QGroupBox{
+	Border:none;
+	margin-bottom: 5px;
+}</string>
+         </property>
          <property name="title">
           <string/>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout">
-          <item>
-           <widget class="QComboBox" name="secProductId"/>
+         <layout class="QFormLayout" name="formLayout_2">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_4">
+            <property name="styleSheet">
+             <string notr="true">font: 12pt &quot;Nirmala UI&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Select Product ID:</string>
+            </property>
+           </widget>
           </item>
-          <item>
-           <widget class="QTableView" name="advSalesTrendTB"/>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="secProductId">
+            <property name="styleSheet">
+             <string notr="true">font: 12pt &quot;Nirmala UI&quot;;</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>

@@ -26,6 +26,8 @@ private slots:
 
     void on_goToAdvSrch_clicked();
 
+    void on_secProductId_currentIndexChanged(const QString &arg1);
+
 private:
     Ui::saleTrends *ui;
     dbConnection conn;

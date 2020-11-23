@@ -20,7 +20,6 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTableView>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -41,12 +40,13 @@ public:
     QComboBox *comboBox;
     QWidget *page_2;
     QGridLayout *gridLayout_3;
+    QTableView *advSalesTrendTB;
     QLabel *label_3;
     QPushButton *rtnToSaleTrend;
     QGroupBox *groupBox_2;
-    QVBoxLayout *verticalLayout;
+    QFormLayout *formLayout_2;
+    QLabel *label_4;
     QComboBox *secProductId;
-    QTableView *advSalesTrendTB;
 
     void setupUi(QWidget *saleTrends)
     {
@@ -156,6 +156,21 @@ public:
         page_2->setObjectName(QString::fromUtf8("page_2"));
         gridLayout_3 = new QGridLayout(page_2);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
+        advSalesTrendTB = new QTableView(page_2);
+        advSalesTrendTB->setObjectName(QString::fromUtf8("advSalesTrendTB"));
+        advSalesTrendTB->setStyleSheet(QString::fromUtf8("QTableView {\n"
+"	border: 2px solid black;\n"
+"	background-color: #F8F8FF;\n"
+"}\n"
+"\n"
+"QHeaderView{\n"
+"	font-size: 14px;\n"
+"	font-weight: bold;\n"
+"	background-color: #C8C8C8;\n"
+"}"));
+
+        gridLayout_3->addWidget(advSalesTrendTB, 3, 0, 1, 1);
+
         label_3 = new QLabel(page_2);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setMaximumSize(QSize(16777215, 50));
@@ -187,24 +202,30 @@ public:
 "	border: 2px solid white;\n"
 "}"));
 
-        gridLayout_3->addWidget(rtnToSaleTrend, 2, 0, 1, 1);
+        gridLayout_3->addWidget(rtnToSaleTrend, 4, 0, 1, 1);
 
         groupBox_2 = new QGroupBox(page_2);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
-        verticalLayout = new QVBoxLayout(groupBox_2);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        groupBox_2->setStyleSheet(QString::fromUtf8("QGroupBox{\n"
+"	Border:none;\n"
+"	margin-bottom: 5px;\n"
+"}"));
+        formLayout_2 = new QFormLayout(groupBox_2);
+        formLayout_2->setObjectName(QString::fromUtf8("formLayout_2"));
+        label_4 = new QLabel(groupBox_2);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setStyleSheet(QString::fromUtf8("font: 12pt \"Nirmala UI\";"));
+
+        formLayout_2->setWidget(0, QFormLayout::LabelRole, label_4);
+
         secProductId = new QComboBox(groupBox_2);
         secProductId->setObjectName(QString::fromUtf8("secProductId"));
+        secProductId->setStyleSheet(QString::fromUtf8("font: 12pt \"Nirmala UI\";"));
 
-        verticalLayout->addWidget(secProductId);
-
-        advSalesTrendTB = new QTableView(groupBox_2);
-        advSalesTrendTB->setObjectName(QString::fromUtf8("advSalesTrendTB"));
-
-        verticalLayout->addWidget(advSalesTrendTB);
+        formLayout_2->setWidget(0, QFormLayout::FieldRole, secProductId);
 
 
-        gridLayout_3->addWidget(groupBox_2, 1, 0, 1, 1);
+        gridLayout_3->addWidget(groupBox_2, 2, 0, 1, 1);
 
         stackedWidget->addWidget(page_2);
 
@@ -244,6 +265,7 @@ public:
         label_3->setText(QCoreApplication::translate("saleTrends", "Advance Sales Trend Search", nullptr));
         rtnToSaleTrend->setText(QCoreApplication::translate("saleTrends", "Return To Sales Trend", nullptr));
         groupBox_2->setTitle(QString());
+        label_4->setText(QCoreApplication::translate("saleTrends", "Select Product ID:", nullptr));
     } // retranslateUi
 
 };
