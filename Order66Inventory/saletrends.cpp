@@ -60,7 +60,7 @@ void saleTrends::on_comboBox_currentIndexChanged(int index)
     QString DecQry = "SELECT * FROM Sales WHERE SoldDate BETWEEN '2020-12-01' AND '2020-12-31'";
     QString AllQry = "SELECT * FROM Sales";
 
-    int currIndex = ui->comboBox->currentIndex();
+    int currIndex = index;
 
     switch (currIndex) {
         case 0:
