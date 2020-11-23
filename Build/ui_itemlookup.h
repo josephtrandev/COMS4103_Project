@@ -184,7 +184,7 @@ public:
         ItemLookUp->setWindowTitle(QCoreApplication::translate("ItemLookUp", "Form", nullptr));
         groupBox->setTitle(QString());
         label->setText(QCoreApplication::translate("ItemLookUp", "Item Look Up", nullptr));
-        label_2->setText(QCoreApplication::translate("ItemLookUp", "Enter Item ID:", nullptr));
+        label_2->setText(QCoreApplication::translate("ItemLookUp", "Enter ProductID:", nullptr));
 #if QT_CONFIG(tooltip)
         getItemText->setToolTip(QCoreApplication::translate("ItemLookUp", "Search for an item using its ID number", nullptr));
 #endif // QT_CONFIG(tooltip)

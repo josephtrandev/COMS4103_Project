@@ -85,7 +85,7 @@ public:
         label->setStyleSheet(QString::fromUtf8("font-size: 22pt;\n"
 "color: rgb(54, 73, 88);\n"
 "font-weight: bold;\n"
-"border-bottom: 2px solid;"));
+"border-bottom: 2px solid rgb(54, 73, 88);"));
         label->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(label);
@@ -94,7 +94,7 @@ public:
         orderTable->setObjectName(QString::fromUtf8("orderTable"));
         orderTable->viewport()->setProperty("cursor", QVariant(QCursor(Qt::PointingHandCursor)));
         orderTable->setStyleSheet(QString::fromUtf8("QTableView {\n"
-"	border: 2px solid black;\n"
+"	border: 2px solid rgb(54, 73, 88);\n"
 "	background-color: #F8F8FF;\n"
 "}\n"
 "\n"
@@ -118,7 +118,7 @@ public:
         label_2->setStyleSheet(QString::fromUtf8("font-size: 22pt;\n"
 "color: rgb(54, 73, 88);\n"
 "font-weight: bold;\n"
-"border-bottom: 2px solid;"));
+"border-bottom: 2px solid rgb(54, 73, 88);"));
         label_2->setAlignment(Qt::AlignCenter);
 
         gridLayout_2->addWidget(label_2, 0, 0, 1, 1);

@@ -77,7 +77,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1000, 600);
+        MainWindow->resize(1000, 643);
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -110,14 +110,22 @@ public:
         inventoryTable->setObjectName(QString::fromUtf8("inventoryTable"));
         inventoryTable->viewport()->setProperty("cursor", QVariant(QCursor(Qt::PointingHandCursor)));
         inventoryTable->setStyleSheet(QString::fromUtf8("QHeaderView{\n"
-"	font-size: 14px;\n"
+"	font-size: 12pt;\n"
 "	font-weight: bold;\n"
 "	background-color: #C8C8C8;\n"
-"	padding: 8px;\n"
+"	padding: 10px;\n"
+"	font-family:  \"Nirmala UI\";\n"
+"}\n"
+"\n"
+"QTableView{\n"
+"		font-family:  \"Nirmala UI\";\n"
+"		font-size: 12pt;\n"
 "}"));
+        inventoryTable->setIconSize(QSize(5, 5));
         inventoryTable->horizontalHeader()->setMinimumSectionSize(50);
         inventoryTable->verticalHeader()->setCascadingSectionResizes(false);
         inventoryTable->verticalHeader()->setMinimumSectionSize(28);
+        inventoryTable->verticalHeader()->setStretchLastSection(false);
 
         gridLayout_3->addWidget(inventoryTable, 1, 0, 1, 1);
 
@@ -132,7 +140,7 @@ public:
         label->setFont(font);
         label->setLayoutDirection(Qt::LeftToRight);
         label->setStyleSheet(QString::fromUtf8("font-size: 22pt;\n"
-"border-bottom: 2px solid;\n"
+"border-bottom: 2px solid rgb(54, 73, 88);\n"
 "padding-bottom: 5px;\n"
 "color: rgb(54, 73, 88);"));
         label->setAlignment(Qt::AlignCenter);
@@ -170,8 +178,9 @@ public:
         label_2->setMaximumSize(QSize(16777215, 50));
         label_2->setStyleSheet(QString::fromUtf8("font-size: 22pt;\n"
 "font-weight:bold;\n"
-"border-bottom: 2px solid;\n"
-"padding-bottom: 5px;"));
+"border-bottom: 2px solid rgb(54, 73, 88);\n"
+"padding-bottom: 5px;\n"
+"color: rgb(54, 73, 88);"));
         label_2->setAlignment(Qt::AlignCenter);
 
         gridLayout_4->addWidget(label_2, 0, 0, 1, 1);
